@@ -152,7 +152,7 @@
 <body>
     <header>
         <img src="https://github.com/Aimzz771/amconnect-website/blob/main/Logo-removebg-preview.png?raw=true" alt="AM Connect Logo">
-      
+        <h1>AM Connect</h1>
         <p>Your trusted partner for impactful and memorable events.</p>
     </header>
 
@@ -182,16 +182,27 @@
         <p>We would love to hear from you! Reach out to us for any event inquiries or collaborations:</p>
         <p><strong>Phone:</strong> 07395462289</p>
         <p><strong>Email:</strong> info@amconnect.co.uk</p>
-        <form class="contact-form">
+        <form class="contact-form" id="contactForm">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
             <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
             <button type="submit">Send Message</button>
         </form>
+        <p id="responseMessage" style="display:none; color: green; margin-top: 15px;">Thank you for reaching out! We will get back to you soon.</p>
     </section>
 
     <footer>
         <p>&copy; 2024 AM Connect. All rights reserved.</p>
     </footer>
+
+    <script>
+        // JavaScript to handle the form submission
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission behavior
+            const responseMessage = document.getElementById('responseMessage');
+            responseMessage.style.display = 'block'; // Show the response message
+            this.reset(); // Reset the form fields
+        });
+    </script>
 </body>
 </html>
